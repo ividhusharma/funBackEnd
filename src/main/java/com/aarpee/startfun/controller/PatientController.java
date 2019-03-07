@@ -1,5 +1,7 @@
 package com.aarpee.startfun.controller;
 
+import com.aarpee.startfun.dto.MailDto;
+import com.aarpee.startfun.microservice.mailer.MailerServiceProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Configuration;
@@ -28,6 +30,9 @@ public class PatientController {
 	@Autowired 
 	private PatientRepository patientRepository;
 
+	@Autowired
+	private MailerServiceProxy mailerServiceProxy;
+
 	@RequestMapping(method=RequestMethod.POST, path="/create")
 	public @ResponseBody Patient addNewUser (@RequestBody PatientDto patientDto) {
 
@@ -37,9 +42,10 @@ public class PatientController {
 		patient.setMobileNumber(patientDto.getMobileNumber());
 		patient.setAddress(patientDto.getAddress());
 		patient.setEmail(patientDto.getEmail());
-		
-		return patientRepository.save(patient);
-		//return "Saved";
+
+		Patient savedPatient = patientRepository.save(patient);
+		System.out.println(mailerServiceProxy.sendMail(String.valueOf(savedPatient.getUserId())));
+		return savedPatient;
 	}
 
 	@RequestMapping(method=RequestMethod.GET, path="/all")
