@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class StartContoller {
 
-	@RequestMapping("/start")
-	public String getStartMessage(@RequestParam String name){
-		return "Welcome "+name;
-	}
-	
+  @RequestMapping("/start")
+  public String getStartMessage(@RequestParam String name) {
+    return "Welcome " + name;
+  }
 }

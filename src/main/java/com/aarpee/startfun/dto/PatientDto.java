@@ -1,64 +1,58 @@
 package com.aarpee.startfun.dto;
 
 public class PatientDto {
+  private String patientFirstName;
+  private String patientLastName;
+  private Integer patientAge;
+  private String patientEmail;
+  private String patientAddress;
+  private Long patientMobileNumber;
 
-	private Long userId;
-	
-	private String firstName;
-    
-    private String lastName;
-    
-    private Long mobileNumber;
+  public String getPatientFirstName() {
+    return patientFirstName;
+  }
 
-    private String address;
-    
-    private String email;
-    
-    public Long getUserId() {
-		return userId;
-	}
+  public void setPatientFirstName(String patientFirstName) {
+    this.patientFirstName = patientFirstName;
+  }
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
+  public String getPatientLastName() {
+    return patientLastName;
+  }
 
-	public String getFirstName() {
-		return firstName;
-	}
+  public void setPatientLastName(String patientLastName) {
+    this.patientLastName = patientLastName;
+  }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+  public Integer getPatientAge() {
+    return patientAge;
+  }
 
-	public String getLastName() {
-		return lastName;
-	}
+  public void setPatientAge(Integer patientAge) {
+    this.patientAge = patientAge;
+  }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+  public String getPatientEmail() {
+    return patientEmail;
+  }
 
-	public Long getMobileNumber() {
-		return mobileNumber;
-	}
+  public void setPatientEmail(String patientEmail) {
+    this.patientEmail = patientEmail;
+  }
 
-	public void setMobileNumber(Long mobileNumber) {
-		this.mobileNumber = mobileNumber;
-	}
+  public String getPatientAddress() {
+    return patientAddress;
+  }
 
-	public String getAddress() {
-		return address;
-	}
+  public void setPatientAddress(String patientAddress) {
+    this.patientAddress = patientAddress;
+  }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+  public Long getPatientMobileNumber() {
+    return patientMobileNumber;
+  }
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}	
+  public void setPatientMobileNumber(Long patientMobileNumber) {
+    this.patientMobileNumber = patientMobileNumber;
+  }
 }

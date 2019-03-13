@@ -1,73 +1,100 @@
 package com.aarpee.startfun.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 @Entity
 public class Patient {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long userId;
-    
-    private String firstName;
-    
-    private String lastName;
-    
-    private Long mobileNumber;
 
-    private String address;
-    
-    private String email;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(insertable = false, unique = true, updatable = false)
+  private Long patientId;
 
-    public Long getUserId() {
-		return userId;
-	}
+  @NotNull private String patientFirstName;
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
+  private String patientLastName;
 
-	public String getFirstName() {
-		return firstName;
-	}
+  @NotNull private Integer patientAge;
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+  private String patientEmail;
 
-	public String getLastName() {
-		return lastName;
-	}
+  @NotNull private String patientAddress;
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+  private Long patientMobileNumber;
 
-	public Long getMobileNumber() {
-		return mobileNumber;
-	}
+  private Date patientRegistrationDate;
 
-	public void setMobileNumber(Long mobileNumber) {
-		this.mobileNumber = mobileNumber;
-	}
+  public Patient() {}
 
-	public String getAddress() {
-		return address;
-	}
+  public Patient(Long patientId)
+  {
+    super();
+    this.setPatientId(patientId);
+  }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+  public Long getPatientId() {
+    return patientId;
+  }
 
-	public String getEmail() {
-		return email;
-	}
+  public void setPatientId(Long patientId) {
+    this.patientId = patientId;
+  }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}	
+  public String getPatientFirstName() {
+    return patientFirstName;
+  }
 
+  public void setPatientFirstName(String patientFirstName) {
+    this.patientFirstName = patientFirstName;
+  }
+
+  public String getPatientLastName() {
+    return patientLastName;
+  }
+
+  public void setPatientLastName(String patientLastName) {
+    this.patientLastName = patientLastName;
+  }
+
+  public Integer getPatientAge() {
+    return patientAge;
+  }
+
+  public void setPatientAge(Integer patientAge) {
+    this.patientAge = patientAge;
+  }
+
+  public String getPatientEmail() {
+    return patientEmail;
+  }
+
+  public void setPatientEmail(String patientEmail) {
+    this.patientEmail = patientEmail;
+  }
+
+  public String getPatientAddress() {
+    return patientAddress;
+  }
+
+  public void setPatientAddress(String patientAddress) {
+    this.patientAddress = patientAddress;
+  }
+
+  public Long getPatientMobileNumber() {
+    return patientMobileNumber;
+  }
+
+  public void setPatientMobileNumber(Long patientMobileNumber) {
+    this.patientMobileNumber = patientMobileNumber;
+  }
+
+  public Date getPatientRegistrationDate() {
+    return patientRegistrationDate;
+  }
+
+  public void setPatientRegistrationDate(Date patientRegistrationDate) {
+    this.patientRegistrationDate = patientRegistrationDate;
+  }
 }
