@@ -26,7 +26,7 @@ public class PatientController {
 	@Autowired
 	private MailerServiceProxy mailerServiceProxy;
 
-	@RequestMapping(method=RequestMethod.POST, path="/create")
+	/*@RequestMapping(method=RequestMethod.POST, path="/create")
 	public @ResponseBody Patient addNewUser (@RequestBody PatientDto patientDto) {
 
 		Patient patient = new Patient();
@@ -40,8 +40,9 @@ public class PatientController {
 		System.out.println(mailerServiceProxy.sendMail(String.valueOf(savedPatient.getUserId())));
 		return savedPatient;
 	}
+	*/
 
-	/*
+
   @RequestMapping(method = RequestMethod.POST, path = "/create")
   public @ResponseBody Patient createPatient(@RequestBody PatientDto patientDto) {
     Patient patient = new Patient();
@@ -56,7 +57,7 @@ public class PatientController {
     return patientRepository.save(patient);
     // return "Saved";
   }
-*/
+
   @RequestMapping(method = RequestMethod.GET, path = "/all")
   public @ResponseBody Iterable<Patient> getAllUsers() {
     // This returns a JSON or XML with the users
